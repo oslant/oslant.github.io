@@ -1,28 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion Example</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .accordion-img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">/
-    <h2>Dropdowns</h2>
-    <p>The .divider class is used to separate links inside the dropdown menu with a thin horizontal line:</p>
-    <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
-            <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><a href="#">HTML</a></li>
-            <li><a href="#">CSS</a></li>
-            <li><a href="#">JavaScript</a></li>
-            <li class="divider"></li>
-            <li><a href="#">About Us</a></li>
-        </ul>
+<div class="container mt-5">
+    <div class="accordion" id="imageAccordion">
+
+        <!-- Flower Accordion -->
+        <div class="card">
+            <div class="card-header" id="flowerHeading">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#flowerCollapse" aria-expanded="true" aria-controls="flowerCollapse">
+                        Flower
+                    </button>
+                </h2>
+            </div>
+
+            <div id="flowerCollapse" class="collapse" aria-labelledby="flowerHeading" data-parent="#imageAccordion">
+                <div class="card-body">
+                    <img src="https://placekitten.com/300/200" alt="Flower" class="accordion-img">
+                    <p>This is a beautiful flower.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bird Accordion 1 -->
+        <div class="card">
+            <div class="card-header" id="bird1Heading">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#bird1Collapse" aria-expanded="false" aria-controls="bird1Collapse">
+                        Bird 1
+                    </button>
+                </h2>
+            </div>
+
+            <div id="bird1Collapse" class="collapse" aria-labelledby="bird1Heading" data-parent="#imageAccordion">
+                <div class="card-body">
+                    <img src="https://placekitten.com/300/201" alt="Bird 1" class="accordion-img">
+                    <p>This is a bird.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bird Accordion 2 -->
+        <div class="card">
+            <div class="card-header" id="bird2Heading">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#bird2Collapse" aria-expanded="false" aria-controls="bird2Collapse">
+                        Bird 2
+                    </button>
+                </h2>
+            </div>
+
+            <div id="bird2Collapse" class="collapse" aria-labelledby="bird2Heading" data-parent="#imageAccordion">
+                <div class="card-body">
+                    <img src="https://placekitten.com/300/202" alt="Bird 2" class="accordion-img">
+                    <p>This is another bird.</p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
