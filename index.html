@@ -3,82 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accordion Example</title>
+    <title>Image Gallery</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        .accordion-img {
-            max-width: 100%;
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .image-placeholder {
+            width: 30%;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .image-placeholder img {
+            width: 100%;
             height: auto;
+        }
+
+        .expanded-content {
+            display: none;
+            padding: 20px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
 <div class="container mt-5">
-    <div class="accordion" id="imageAccordion">
-
-        <!-- Flower Accordion -->
-        <div class="card">
-            <div class="card-header" id="flowerHeading">
-                <h2 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#flowerCollapse" aria-expanded="true" aria-controls="flowerCollapse">
-                        Flower
-                    </button>
-                </h2>
-            </div>
-
-            <div id="flowerCollapse" class="collapse" aria-labelledby="flowerHeading" data-parent="#imageAccordion">
-                <div class="card-body">
-                    <img src="https://placekitten.com/300/200" alt="Flower" class="accordion-img">
-                    <p>This is a beautiful flower.</p>
-                </div>
-            </div>
+    <div class="image-container">
+        <!-- First Row -->
+        <div class="image-placeholder" data-toggle="modal" data-target="#imageModal1">
+            <img src="https://placekitten.com/300/200" alt="Image 1">
         </div>
-
-        <!-- Bird Accordion 1 -->
-        <div class="card">
-            <div class="card-header" id="bird1Heading">
-                <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#bird1Collapse" aria-expanded="false" aria-controls="bird1Collapse">
-                        Bird 1
-                    </button>
-                </h2>
-            </div>
-
-            <div id="bird1Collapse" class="collapse" aria-labelledby="bird1Heading" data-parent="#imageAccordion">
-                <div class="card-body">
-                    <img src="https://placekitten.com/300/201" alt="Bird 1" class="accordion-img">
-                    <p>This is a bird.</p>
-                </div>
-            </div>
+        <div class="image-placeholder" data-toggle="modal" data-target="#imageModal2">
+            <img src="https://placekitten.com/301/200" alt="Image 2">
         </div>
-
-        <!-- Bird Accordion 2 -->
-        <div class="card">
-            <div class="card-header" id="bird2Heading">
-                <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#bird2Collapse" aria-expanded="false" aria-controls="bird2Collapse">
-                        Bird 2
-                    </button>
-                </h2>
-            </div>
-
-            <div id="bird2Collapse" class="collapse" aria-labelledby="bird2Heading" data-parent="#imageAccordion">
-                <div class="card-body">
-                    <img src="https://placekitten.com/300/202" alt="Bird 2" class="accordion-img">
-                    <p>This is another bird.</p>
-                </div>
-            </div>
+        <div class="image-placeholder" data-toggle="modal" data-target="#imageModal3">
+            <img src="https://placekitten.com/302/200" alt="Image 3">
         </div>
+    </div>
 
+    <div class="image-container">
+        <!-- Second Row -->
+        <div class="image-placeholder" data-toggle="modal" data-target="#imageModal4">
+            <img src="https://placekitten.com/303/200" alt="Image 4">
+        </div>
+        <div class="image-placeholder" data-toggle="modal" data-target="#imageModal5">
+            <img src="https://placekitten.com/304/200" alt="Image 5">
+        </div>
+        <div class="image-placeholder" data-toggle="modal" data-target="#imageModal6">
+            <img src="https://placekitten.com/305/200" alt="Image 6">
+        </div>
     </div>
 </div>
+
+<!-- Modals for Expanded Content -->
+<div class="modal fade" id="imageModal1" tabindex="-1" role="dialog" aria-labelledby="imageModal1Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="https://placekitten.com/300/200" alt="Image 1" style="width: 100%;">
+                <div class="expanded-content">
+                    <p>Text for Image 1 goes here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Repeat similar modals for Image 2 to Image 6 -->
 
 <!-- Bootstrap JS and Popper.js -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Script to Show/Hide Expanded Content -->
+<script>
+    $(document).ready(function(){
+        $('.image-placeholder').click(function(){
+            var modalId = $(this).data('target');
+            $(modalId).modal('show');
+        });
+    });
+</script>
 
 </body>
 </html>
