@@ -2,86 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bootstrap Page</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            padding-top: 70px;
-        }
-
-        .dog-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-
-        .dog-image {
-            width: 30%;
-            margin-bottom: 20px;
-            cursor: pointer;
-        }
-
-        .dog-image img {
-            width: 100%;
-            height: auto;
-        }
-
-        .dropdown-content {
-            display: none;
-            padding: 20px;
-            text-align: center;
-            background-color: #f9f9f9;
-        }
-    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
-<div class="container">
-    <h1 class="text-center display-1">o/</h1>
+<div class="container mt-5">
+    <!-- Header -->
+    <div class="text-center">
+        <h1 class="display-1">o/</h1>
+    </div>
 
-    <div class="dog-container">
-        <!-- First Row -->
-        <div class="dog-image" onclick="toggleDropdown('dog1')">
-            <img src="https://placekitten.com/300/200" alt="Dog 1">
-            <div id="dog1" class="dropdown-content">
-                <p>Kind of Dog 1 goes here.</p>
-            </div>
+    <!-- Buttons -->
+    <div class="row mt-4">
+        <div class="col-md-4 mb-2">
+            <button type="button" class="btn btn-primary btn-block">Members</button>
         </div>
-        <div class="dog-image" onclick="toggleDropdown('dog2')">
-            <img src="https://placekitten.com/301/200" alt="Dog 2">
-            <div id="dog2" class="dropdown-content">
-                <p>Kind of Dog 2 goes here.</p>
-            </div>
+        <div class="col-md-4 mb-2">
+            <button type="button" class="btn btn-primary btn-block">About</button>
         </div>
-        <div class="dog-image" onclick="toggleDropdown('dog3')">
-            <img src="https://placekitten.com/302/200" alt="Dog 3">
-            <div id="dog3" class="dropdown-content">
-                <p>Kind of Dog 3 goes here.</p>
-            </div>
+        <div class="col-md-4 mb-2">
+            <button type="button" class="btn btn-primary btn-block">Live</button>
         </div>
     </div>
 
-    <div class="dog-container">
-        <!-- Second Row -->
-        <div class="dog-image" onclick="toggleDropdown('dog4')">
-            <img src="https://placekitten.com/303/200" alt="Dog 4">
-            <div id="dog4" class="dropdown-content">
-                <p>Kind of Dog 4 goes here.</p>
+    <!-- Dog Images with Dropdowns -->
+    <div class="row mt-4">
+        <div class="col-md-4 mb-2">
+            <div class="dropdown">
+                <img src="https://via.placeholder.com/150" alt="Dog 1" class="img-fluid img-thumbnail" data-toggle="dropdown">
+                <div class="dropdown-menu">
+                    <p class="dropdown-item-text">Description for Dog 1.</p>
+                </div>
             </div>
         </div>
-        <div class="dog-image" onclick="toggleDropdown('dog5')">
-            <img src="https://placekitten.com/304/200" alt="Dog 5">
-            <div id="dog5" class="dropdown-content">
-                <p>Kind of Dog 5 goes here.</p>
+        <div class="col-md-4 mb-2">
+            <div class="dropdown">
+                <img src="https://via.placeholder.com/150" alt="Dog 2" class="img-fluid img-thumbnail" data-toggle="dropdown">
+                <div class="dropdown-menu">
+                    <p class="dropdown-item-text">Description for Dog 2.</p>
+                </div>
             </div>
         </div>
-        <div class="dog-image" onclick="toggleDropdown('dog6')">
-            <img src="https://placekitten.com/305/200" alt="Dog 6">
-            <div id="dog6" class="dropdown-content">
-                <p>Kind of Dog 6 goes here.</p>
+        <div class="col-md-4 mb-2">
+            <div class="dropdown">
+                <img src="https://via.placeholder.com/150" alt="Dog 3" class="img-fluid img-thumbnail" data-toggle="dropdown">
+                <div class="dropdown-menu">
+                    <p class="dropdown-item-text">Description for Dog 3.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -89,19 +59,8 @@
 
 <!-- Bootstrap JS and Popper.js -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<script>
-    function toggleDropdown(dogId) {
-        var dropdown = document.getElementById(dogId);
-        if (dropdown.style.display === "block") {
-            dropdown.style.display = "none";
-        } else {
-            dropdown.style.display = "block";
-        }
-    }
-</script>
 
 </body>
 </html>
